@@ -1,0 +1,33 @@
+Win7版本为专业版service packet 1。
+
+VISP版本为3.2.1（2019.11.3）。
+
+将VISP装在D盘，按WIN+R快捷键，输入cmd，打开命令提示符，输入D：进入D盘，输入setx VISP_WS "D:\visp-ws"后按Enter键创建VISP_WS工作环境变量，输入mkdir D:\visp-ws后按Enter键生成相应的文件夹。
+
+VS版本为VS2017专业版，安装Development Desktop C++，注意右边的Windows 8.1 SDK和UCRT SDK项要选中安装，否则后面CMake会出错。
+
+直接双击cmake-3.14.3-win64-x64安装CMake。
+
+直接双击Git-2.21.0-64-bit，全部选中默认选项进行安装。
+
+双击opencv-4.1.1-vc14_vc15，解压到D:\visp-ws\opencv，并将文件夹重命名为opencv-4.1.1，在命令提示符中输入setx OpenCV_DIR "D:\visp-ws\opencv-4.1.1\build"，将D:\visp-ws\opencv-4.1.1\build\x64\vc15\bin添加进系统路径变量中。
+
+将eigen-3.3.7文件夹复制到D:\visp-ws路径下，在命令提示符中依次输入mkdir D:\visp-ws\eigen-3.3.7\build-vc15，cd D:\visp-ws\eigen-3.3.7\build-vc15，cmake -G "Visual Studio 15 2017 Win64" %VISP_WS%\eigen-3.3.7 -DCMAKE_INSTALL_PREFIX=%VISP_WS%\eigen-3.3.7\build-vc15\install，cmake --build . --config Release --target install，setx Eigen3_DIR "%VISP_WS%\eigen-3.3.7\build-vc15\install\share\eigen3\cmake"。
+
+双击Intel.RealSense.SDK-WIN7默认选项安装，该安装包包含了驱动和SDK，不过仅对D400系列的相机有效。Win10系统下要依次安装驱动和SDK文件。安装完成后要将dll的路径C:\Program Files (x86)\Intel RealSense SDK 2.0\bin\x64添加到系统路径变量中。
+
+双击Basler_pylon_5.0.12.11830安装Basler相机驱动，注意版本用的是5.0.12版本。安装过程中注意要选"Developer"，安装路径选择默认路径 C:\Program Files\Basler\pylon 5\。
+
+将visp文件夹复制到D:\visp-ws路径下，打开CMake (cmake-gui)，source code路径填D:\visp-ws\visp，编译路径填D:\visp-ws\visp-build-vc15，点击Configure，选择Visual Studio 15 2017作为生成器，选择x64作为生成平台，点击Finish开始进行配置，配置完后点击Generate，等待生成完成后即可关闭CMake。
+
+双击D:\visp-ws/visp-build-vc15路径下的VISP.sln文件，选择Release配置，点击菜单中的“生成>生成解决方案”，等待生成后，点击INSTALL项目，右键点击生成。同样地，如何选择Debug配置，后两步操作相同。
+
+将D:\visp-ws\visp-build-vc15\install\x64\vc15\bin添加到系统路径变量中。
+在命令提示符中输入setx VISP_DIR "D:\visp-ws\visp-build-vc15\install"设置VISP_DIR环境变量。
+
+Win10的安装步骤跟Win7的相同，区别仅在于在Win10中安装VS2017时不必安装Windows 8.1 SDK和UCRT SDK。 
+
+Windows 8.1 SDK和UCRT SDK项，另外相机的驱动和SDK版本可能不一样。
+
+注意事项：
+源代码及项目的配置不能轻易改，如符号格式等。cmake文件夹中的FindRealsense2有作更改，安装目录改成了C:\Program Files (x86)\Intel RealSense SDK 2.0 (Win7)。

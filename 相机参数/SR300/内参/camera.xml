@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<root>
+  <!--This file stores intrinsic camera parameters used
+   in the vpCameraParameters Class of ViSP available
+   at https://visp.inria.fr/download/ .
+   It can be read with the parse method of
+   the vpXmlParserCamera class.-->
+  <camera>
+    <!--Name of the camera-->
+    <name>Camera</name>
+    <!--Size of the image on which camera calibration was performed-->
+    <image_width>640</image_width>
+    <image_height>480</image_height>
+    <!--Intrinsic camera parameters computed for each projection model-->
+    <model>
+      <!--Projection model type-->
+      <type>perspectiveProjWithoutDistortion</type>
+      <!--Pixel ratio-->
+      <px>601.7943439868</px>
+      <py>599.6883470733</py>
+      <!--Principal point-->
+      <u0>321.2673997939</u0>
+      <v0>230.2931210727</v0>
+    </model>
+    <model>
+      <!--Projection model type-->
+      <type>perspectiveProjWithDistortion</type>
+      <!--Pixel ratio-->
+      <px>627.7417873383</px>
+      <py>625.8460243343</py>
+      <!--Principal point-->
+      <u0>323.8595439165</u0>
+      <v0>231.5640961674</v0>
+      <!--Undistorted to distorted distortion parameter-->
+      <kud>0.0853858385</kud>
+      <!--Distorted to undistorted distortion parameter-->
+      <kdu>-0.0827788296</kdu>
+    </model>
+    <!--Additional information-->
+    <additional_information>
+      <date>2019/09/17 21:35:56</date>
+      <nb_calibration_images>14</nb_calibration_images>
+      <calibration_pattern_type>Chessboard</calibration_pattern_type>
+      <board_size>9x6</board_size>
+      <square_size>0.026</square_size>
+      <global_reprojection_error>
+        <without_distortion>0.29585</without_distortion>
+        <with_distortion>0.187449</with_distortion>
+      </global_reprojection_error>
+    </additional_information>
+  </camera>
+</root>

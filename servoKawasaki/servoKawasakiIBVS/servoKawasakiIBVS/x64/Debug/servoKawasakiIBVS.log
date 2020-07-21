@@ -1,0 +1,7 @@
+﻿  servoKawasakiIBVS.cpp
+e:\visp\install\include\visp3\core\vpconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+e:\visp\install\include\visp3\sensor\vprealsense2.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\program files (x86)\intel realsense sdk 2.0 (win7)\include\librealsense2\rsutil.h(111): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+c:\program files (x86)\intel realsense sdk 2.0 (win7)\include\librealsense2\rsutil.h(113): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+e:\visp\servokawasaki\servokawasakiibvs\servokawasakiibvs\servokawasakiibvs.cpp(209): warning C4244: “参数”: 从“int”转换到“const float”，可能丢失数据
+  servoKawasakiIBVS.vcxproj -> E:\VISP\servoKawasaki\servoKawasakiIBVS\x64\Debug\servoKawasakiIBVS.exe
