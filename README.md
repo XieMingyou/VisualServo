@@ -1,6 +1,7 @@
 # VisualServo
 VisualServo
 Copyright (C) 20018 - 2020 by XieMingyou. All rights reserved.
+
 这是本人自主开发的机器人视觉伺服程序，本人保留版权。
 
 程序功能简介：
